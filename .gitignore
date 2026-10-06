@@ -1,0 +1,37 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+*~
+*.swp
+*.swo
+
+# AppleDouble / resource-fork files
+._*
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+
+# IDEs
+.idea/
+.vscode/
+.vs/
+*.sublime-project
+*.sublime-workspace
+
+# Logs & local env
+*.log
+.env
+.env.*
+!.env.example
+
+# Dependencies / build (none today; ignore if added later)
+node_modules/
+dist/
+build/
+.cache/
+
+# OS metadata
+*.stackdump

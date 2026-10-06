@@ -1,0 +1,335 @@
+@import url('https://fonts.cdnfonts.com/css/gerasol');
+
+body {
+    background-image: url(Images/patternbg.png);
+    background-size: cover;
+    margin: 0;
+    text-align: center;
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+#dialogueP {
+    text-align: center;
+    pointer-events: none;
+    width: 1000px;
+    line-height: 2;
+}
+
+#dialogueB {
+    text-align: center;
+    pointer-events: none;
+    line-height: 2;
+    width: 1000px;
+}
+
+#bInterface {
+    z-index: 995;
+    background-color: white;
+    opacity: 0;
+    width: 1018px;
+    height: 125px;
+    position: absolute;
+    bottom: 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border: black solid 3px;
+    pointer-events: none;
+}
+
+#hName {
+    position: absolute;
+    margin-left: 25px;
+}
+
+#eName {
+    position: absolute;
+    margin-left: 25px;
+}
+
+#hLevel {
+    position: absolute;
+    right: 25px;
+}
+
+#eLevel {
+    position: absolute;
+    right: 25px;
+}
+
+#hMaxHP {
+    width: 250px;
+    height: 15px;
+    background-color: gray;
+    position: absolute;
+    bottom: 15px;
+    left: 25px;
+    right: 25px;
+    border-radius: 3px;
+}
+
+#eMaxHP {
+    width: 300px;
+    height: 15px;
+    background-color: gray;
+    position: absolute;
+    bottom: 15px;
+    left: 25px;
+    right: 25px;
+    border-radius: 3px;
+}
+
+#hCurrentHP {
+    position: absolute;
+    width: 250px;
+    height: 15px;
+    background-color: #35bb27;
+    border-radius: 3px;
+    transition: width 1500ms;
+}
+
+#eCurrentHP {
+    position: absolute;
+    width: 300px;
+    height: 15px;
+    background-color: #35bb27;
+    border-radius: 3px;
+    transition: width 1500ms;
+}
+
+#eDmgHP {
+    width: 300px;
+    height: 15px;
+    background-color: #ff0000;
+    border-radius: 3px;
+    transition: width 2500ms;
+    transition-delay: 200ms;
+}
+
+#hDmgHP {
+    width: 250px;
+    height: 15px;
+    background-color: #ff0000;
+    border-radius: 3px;
+    transition: width 2500ms;
+    transition-delay: 200ms;
+}
+
+
+.description {
+    width: 200px;
+    text-align: center;
+    font-size: 10px;
+    padding-right: 25px;
+    padding-left: 25px;
+    line-height: 2;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+#title {
+    margin-bottom: 30px;
+}
+
+#titleOverlap {
+    width: 1024px;
+    height: 576px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    pointer-events: all;
+    transition: opacity 5s;
+    z-index: 999;
+}
+
+#characters {
+    width: 1000px;
+    justify-content: center;
+    display: flex;
+}
+
+.char {
+    image-rendering: pixelated;
+    width: 150px;
+    height: 150px;
+}
+
+.charDes {
+    text-align: center;
+    justify-content: center;
+}
+
+#charSelect {
+    width: 1024px;
+    height: 576px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    z-index: 998;
+    color: white;
+}
+
+canvas {
+    background-color: red;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.5),
+    0 0 1000px rgb(0, 0, 0);
+    outline: black solid 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    image-rendering: pixelated;
+}
+
+#credits {
+    font-family: 'GERASOL', sans-serif;
+    letter-spacing: 5px;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -90%);
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+}
+
+#dialogue {
+    z-index: 999;
+    background-color: white;
+    opacity: 0;
+    width: 1018px;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border: black solid 3px;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hHealthBar {
+    background-color: white;
+    position: absolute;
+    pointer-events: none;
+    height: 75px;
+    width: 300px;
+    z-index: 999;
+    bottom: 150px;
+    border-radius: 5px;
+    border: black solid 3px;
+    right: 150px;
+    opacity: 0;
+}
+
+#eHealthBar {
+    background-color: white;
+    position: absolute;
+    pointer-events: none;
+    height: 75px;
+    width: 350px;
+    z-index: 999;
+    top: 50px;
+    border-radius: 5px;
+    border: black solid 3px;
+    left: 250px;
+    opacity: 0;
+
+}
+
+#Battledialogue {
+    z-index: 996;
+    background-color: white;
+    opacity: 0;
+    width: 1018px;
+    height: 125px;
+    position: absolute;
+    bottom: 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border: black solid 3px;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#overlappingDiv {
+    width: 1024px;
+    height: 576px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 999;
+}
+
+#centergame {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 1024px;
+    height: 576px;
+}
+
+.moves {
+    position: absolute;
+    font-size: 12px;
+    margin: 15px;
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    background: none;
+    color: inherit;
+    border: none;
+    outline: inherit;
+    cursor: default;
+}
+
+.moves:hover {
+    color: red;
+}
+
+#mv1 {
+    top: 15px;
+    left: 0;
+    right: 200px;
+    text-align: center;
+    width: auto;
+}
+#mv2 {
+    top: 15px;
+    right: 0;
+    left: 200px;
+    text-align: center;
+    width: auto;
+}
+#mv3 {
+    bottom: 15px;
+    left: 0;
+    right: 200px;
+    text-align: center;
+    width: auto;
+}
+#mv4 {
+    bottom: 15px;
+    right: 0;
+    left: 200px;
+    text-align: center;
+    width: auto;
+}

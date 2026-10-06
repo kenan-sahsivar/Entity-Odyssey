@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Entity Odyssey</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.cdnfonts.com/css/gerasol" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="centergame">
+        <div id="dialogue" class="dil" onclick="continueDialogue()">
+            <p id="dialogueP">Character selected as Brute. (click to continue)</p>
+        </div>
+        <div id="battle">
+            <div id="hHealthBar">
+                <p id="hName">Mage</p>
+                <p id="hLevel">Lv1</p>
+                <div id="hMaxHP">
+                    <div id="hCurrentHP"></div>
+                    <div id="hDmgHP"></div>
+                </div>
+            </div>
+            <div id="eHealthBar">
+                <p id="eName">Mage</p>
+                <p id="eLevel">Lv1</p>
+                <div id="eMaxHP">
+                    <div id="eCurrentHP"></div>
+                    <div id="eDmgHP"></div>
+                </div>
+            </div>
+
+            <div id="Battledialogue" class="dil" onclick="continueBDialogue()">
+                <p id="dialogueB"></p>
+            </div>
+            <div id="bInterface">
+                <div style="position: absolute; height: 125px; width: 60%; pointer-events: none; display: flex; justify-content: center; align-items: center;">
+                    <p id="moveDes" style="text-align: center; pointer-events: none; line-height: 2; width: 550px;">Choose a move to use!</p>
+                </div>
+                <div style="position: absolute; height: 125px; right: 40%; width: 3px; background-color: black;"></div>
+                <div id="moves" style="position: absolute; height: 125px; width: 40%; right: 0;">
+                    <button id="mv1" onmouseenter="document.getElementById('moveDes').innerText = moves.desMove1" onmouseleave="moveDesRes()" onclick="hMove(1)" class="moves">Move 1</button>
+                    <button id="mv2" onmouseenter="document.getElementById('moveDes').innerText = moves.desMove2" onmouseleave="moveDesRes()" onclick="hMove(2)" class="moves">Move 2</button>
+                    <button id="mv3" onmouseenter="document.getElementById('moveDes').innerText = moves.desMove3" onmouseleave="moveDesRes()" onclick="hMove(3)" class="moves">Move 3</button>
+                    <button id="mv4" onmouseenter="document.getElementById('moveDes').innerText = moves.desMove4" onmouseleave="moveDesRes()" onclick="hMove(4)" class="moves">Move 4</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="titleOverlap"></div>
+        <div id="charSelect">
+        <h1 id="title">Entity Odyssey</h1>
+        <br>
+        <h3>Choose a character.</h3>
+        <div id="characters">
+            <div class="charDes">
+                <p>Brute</p>
+                <img class="char" draggable="false" onmouseover="hoverChar('desB', 'imgB')" onmouseleave="leaveChar('desB', 'imgB')" onclick="select('Brute')" id="imgB" src="Images/Characters/Brute/BruteSprite.png">
+                <p class="description" id="desB">Powerful. Has a lot of health, and does not have trouble defeating others. (Recommended for beginners)</p>
+            </div>
+            <div class="charDes">
+                <p>Jester</p>
+                <img class="char" draggable="false" onmouseover="hoverChar('desS', 'imgS')" onmouseleave="leaveChar('desS', 'imgS')" onclick="select('Jester')" id="imgS" src="Images/Characters/Jester/SwiftSprite.png">
+                <p class="description" id="desS">Agile. Has a lot of defense, and can take down enemies with his daggers. (Recommended for intermediates)</p>
+            </div>
+            <div class="charDes">
+                <p>Mage</p>
+                <img class="char" draggable="false" onmouseover="hoverChar('desM', 'imgM')" onmouseleave="leaveChar('desM', 'imgM')" onclick="select('Mage')" id="imgM" src="Images/Characters/Mage/MageSprite.png">
+                <p class="description" id="desM">Intellectual. Has a lot of power, and can strategically unleash it. (Recommended for pros)</p>
+            </div>
+        </div>
+    </div>
+    <div id="overlappingDiv"></div>
+    <canvas></canvas>
+    </div>
+
+    <!-- Browser check -->
+    <script src="browser.js"></script>
+    <!-- GSAP (animation / battle transitions) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Tile-map collision / barrier / battle-zone data -->
+    <script src="Data/barriers.js"></script>
+    <script src="Data/collisions.js"></script>
+    <script src="Data/battlezones.js"></script>
+
+    <!-- Core engine -->
+    <script src="js/classes.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/selection.js"></script>
+    <script src="js/map-setup.js"></script>
+    <script src="js/transitions.js"></script>
+    <script src="js/battle-data.js"></script>
+    <script src="js/battle-combat.js"></script>
+    <script src="js/enemy-ai.js"></script>
+    <script src="js/game-loop.js"></script>
+    <script src="js/input.js"></script>
+
+    <p id="credits">M256 Semester 2 Final Project - By Kenan Sahsivar - 2024</p>
+</body>
+</html>
