@@ -4,6 +4,12 @@
 
 The class had not covered Canvas, collision detection, sprite animation, or turn-based combat systems. This project was largely self-taught.
 
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Canvas API](https://img.shields.io/badge/Canvas%20API-Game%20Engine-0A66C2?style=flat-square)
+![Aseprite](https://img.shields.io/badge/Art-Aseprite%20Pixel%20Art-7D929E?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Playable-success?style=flat-square)
+
 ---
 
 ## Overview
